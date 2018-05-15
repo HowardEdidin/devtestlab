@@ -1,0 +1,510 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "labs_fhirdevtest_name": {
+            "defaultValue": "fhirdevtest",
+            "type": "String"
+        },
+        "vaults_fhirDevTest2162_name": {
+            "defaultValue": "fhirDevTest2162",
+            "type": "String"
+        },
+        "vaults_fhirdevtest18e82008_name": {
+            "defaultValue": "fhirdevtest18e82008",
+            "type": "String"
+        },
+        "virtualNetworks_DtlfhirDevTest_name": {
+            "defaultValue": "DtlfhirDevTest",
+            "type": "String"
+        },
+        "storageAccounts_afhirdevtest4379_name": {
+            "defaultValue": "afhirdevtest4379",
+            "type": "String"
+        },
+        "schedules_labvmsshutdown_name": {
+            "defaultValue": "labvmsshutdown",
+            "type": "String"
+        },
+        "schedules_labvmautostart_name": {
+            "defaultValue": "labvmautostart",
+            "type": "String"
+        },
+        "secrets_password_name": {
+            "defaultValue": "password",
+            "type": "String"
+        },
+        "virtualmachines_h654068001_name": {
+            "defaultValue": "h654068001",
+            "type": "String"
+        },
+        "artifactsources_public_repo_name": {
+            "defaultValue": "public repo",
+            "type": "String"
+        },
+        "artifactsources_privaterepo229_name": {
+            "defaultValue": "privaterepo229",
+            "type": "String"
+        },
+        "virtualnetworks_dtlfhirdevtest_name_1": {
+            "defaultValue": "dtlfhirdevtest",
+            "type": "String"
+        },
+        "subnets_DtlfhirDevTestSubnet_name": {
+            "defaultValue": "DtlfhirDevTestSubnet",
+            "type": "String"
+        },
+        "users_18e877fd_521a_49ab_a3b3_cf80775243d6_name": {
+            "defaultValue": "18e877fd-521a-49ab-a3b3-cf80775243d6",
+            "type": "String"
+        },
+        "secrets_a306a2ae_c0ad_4ee6_a553_efa961686b31_name": {
+            "defaultValue": "a306a2ae-c0ad-4ee6-a553-efa961686b31",
+            "type": "String"
+        },
+        "secrets_password_name_1": {
+            "defaultValue": "password",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Generalized from resource: '/subscriptions/474c0a06-c161-48a2-adc5-07c7c4e0202f/resourcegroups/fhirdevtest/providers/microsoft.devtestlab/labs/fhirdevtest'.",
+            "type": "microsoft.devtestlab/labs",
+            "name": "[parameters('labs_fhirdevtest_name')]",
+            "apiVersion": "2016-05-15",
+            "location": "centralus",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "labStorageType": "Premium",
+                "premiumDataDisks": "Disabled",
+                "provisioningState": "Succeeded",
+                "uniqueIdentifier": "97bc141b-f0be-4e43-a561-4538c0a35e38"
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/474c0a06-c161-48a2-adc5-07c7c4e0202f/resourceGroups/fhirdevtest/providers/Microsoft.KeyVault/vaults/fhirdevtest18e82008'.",
+            "type": "Microsoft.KeyVault/vaults",
+            "name": "[parameters('vaults_fhirdevtest18e82008_name')]",
+            "apiVersion": "2016-10-01",
+            "location": "centralus",
+            "tags": {
+                "hidden-DevTestLabs-LabUId": "97bc141b-f0be-4e43-a561-4538c0a35e38",
+                "CreatedBy": "DevTestLabs"
+            },
+            "scale": null,
+            "properties": {
+                "sku": {
+                    "family": "A",
+                    "name": "standard"
+                },
+                "tenantId": "de08c407-19b9-427d-9fe8-edf254300ca7",
+                "accessPolicies": [
+                    {
+                        "tenantId": "de08c407-19b9-427d-9fe8-edf254300ca7",
+                        "objectId": "18e877fd-521a-49ab-a3b3-cf80775243d6",
+                        "permissions": {
+                            "secrets": [
+                                "all"
+                            ]
+                        }
+                    },
+                    {
+                        "tenantId": "de08c407-19b9-427d-9fe8-edf254300ca7",
+                        "objectId": "efd9ce00-342b-428c-8494-074d818c2dd5",
+                        "permissions": {
+                            "secrets": [
+                                "all"
+                            ]
+                        }
+                    }
+                ],
+                "enabledForDeployment": true
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/474c0a06-c161-48a2-adc5-07c7c4e0202f/resourceGroups/fhirdevtest/providers/Microsoft.KeyVault/vaults/fhirDevTest2162'.",
+            "type": "Microsoft.KeyVault/vaults",
+            "name": "[parameters('vaults_fhirDevTest2162_name')]",
+            "apiVersion": "2016-10-01",
+            "location": "centralus",
+            "tags": {
+                "hidden-DevTestLabs-LabUId": "97bc141b-f0be-4e43-a561-4538c0a35e38",
+                "CreatedBy": "DevTestLabs"
+            },
+            "scale": null,
+            "properties": {
+                "sku": {
+                    "family": "A",
+                    "name": "standard"
+                },
+                "tenantId": "de08c407-19b9-427d-9fe8-edf254300ca7",
+                "accessPolicies": [
+                    {
+                        "tenantId": "de08c407-19b9-427d-9fe8-edf254300ca7",
+                        "objectId": "efd9ce00-342b-428c-8494-074d818c2dd5",
+                        "permissions": {
+                            "secrets": [
+                                "all"
+                            ]
+                        }
+                    }
+                ],
+                "enabledForDeployment": true
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/474c0a06-c161-48a2-adc5-07c7c4e0202f/resourceGroups/fhirDevTest/providers/Microsoft.Network/virtualNetworks/DtlfhirDevTest'.",
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[parameters('virtualNetworks_DtlfhirDevTest_name')]",
+            "apiVersion": "2018-02-01",
+            "location": "centralus",
+            "tags": {
+                "hidden-DevTestLabs-LabUId": "97bc141b-f0be-4e43-a561-4538c0a35e38"
+            },
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "66c0af10-defa-405f-9fd1-3939bd687e84",
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "10.0.0.0/20"
+                    ]
+                },
+                "dhcpOptions": {
+                    "dnsServers": []
+                },
+                "subnets": [
+                    {
+                        "name": "[concat(parameters('virtualNetworks_DtlfhirDevTest_name'),'Subnet')]",
+                        "etag": "W/\"50beae36-bf26-4e16-b552-7f0c52309de7\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "addressPrefix": "10.0.0.0/20"
+                        }
+                    }
+                ],
+                "virtualNetworkPeerings": [],
+                "enableDdosProtection": false,
+                "enableVmProtection": false
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/474c0a06-c161-48a2-adc5-07c7c4e0202f/resourceGroups/fhirDevTest/providers/Microsoft.Storage/storageAccounts/afhirdevtest4379'.",
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "kind": "Storage",
+            "name": "[parameters('storageAccounts_afhirdevtest4379_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "centralus",
+            "tags": {
+                "hidden-DevTestLabs-LabUId": "97bc141b-f0be-4e43-a561-4538c0a35e38"
+            },
+            "scale": null,
+            "properties": {
+                "networkAcls": {
+                    "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
+                    "defaultAction": "Allow"
+                },
+                "supportsHttpsTrafficOnly": false,
+                "encryption": {
+                    "services": {
+                        "file": {
+                            "enabled": true
+                        },
+                        "blob": {
+                            "enabled": true
+                        }
+                    },
+                    "keySource": "Microsoft.Storage"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/474c0a06-c161-48a2-adc5-07c7c4e0202f/resourcegroups/fhirdevtest/providers/microsoft.devtestlab/labs/fhirdevtest/virtualmachines/h654068001'.",
+            "type": "microsoft.devtestlab/labs/virtualmachines",
+            "name": "[concat(parameters('labs_fhirdevtest_name'), '/', parameters('virtualmachines_h654068001_name'))]",
+            "apiVersion": "2016-05-15",
+            "location": "centralus",
+            "tags": {
+                "AutoStartOn": "true"
+            },
+            "scale": null,
+            "properties": {
+                "notes": "Visual Studio Enterprise 2017 (latest release) on Windows Server 2016 (x64)",
+                "ownerObjectId": "18e877fd-521a-49ab-a3b3-cf80775243d6",
+                "ownerUserPrincipalName": "654068@cognizant.com",
+                "createdByUserId": "1003BFFDA480FA31",
+                "createdByUser": "654068@cognizant.com",
+                "createdDate": "2018-05-15T18:06:24.0285289+00:00",
+                "osType": "Windows",
+                "size": "Standard_DS1",
+                "userName": "bts",
+                "disallowPublicIpAddress": true,
+                "artifactDeploymentStatus": {
+                    "artifactsApplied": 0,
+                    "totalArtifacts": 0
+                },
+                "galleryImageReference": {
+                    "offer": "VisualStudio",
+                    "publisher": "MicrosoftVisualStudio",
+                    "sku": "VS-2017-Ent-Latest-WS2016",
+                    "osType": "Windows",
+                    "version": "latest"
+                },
+                "networkInterface": {},
+                "allowClaim": false,
+                "storageType": "Premium",
+                "virtualMachineCreationSource": "FromGalleryImage",
+                "provisioningState": "Succeeded",
+                "uniqueIdentifier": "e62e2756-aaf8-4b28-871e-5cd2260336d4"
+            },
+            "dependsOn": [
+                "[resourceId('microsoft.devtestlab/labs', parameters('labs_fhirdevtest_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/474c0a06-c161-48a2-adc5-07c7c4e0202f/resourcegroups/fhirdevtest/providers/microsoft.devtestlab/labs/fhirdevtest/artifactsources/privaterepo229'.",
+            "type": "microsoft.devtestlab/labs/artifactsources",
+            "name": "[concat(parameters('labs_fhirdevtest_name'), '/', parameters('artifactsources_privaterepo229_name'))]",
+            "apiVersion": "2016-05-15",
+            "scale": null,
+            "properties": {
+                "displayName": "DevTestLabGithub",
+                "uri": "https://github.com/HowardEdidin/devtestlab.git",
+                "sourceType": "GitHub",
+                "folderPath": "/artifacts",
+                "armTemplateFolderPath": "",
+                "branchRef": "dev",
+                "status": "Enabled",
+                "provisioningState": "Succeeded",
+                "uniqueIdentifier": "f42fa76c-9f9e-4739-b3e5-cee1f385bd04"
+            },
+            "dependsOn": [
+                "[resourceId('microsoft.devtestlab/labs', parameters('labs_fhirdevtest_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/474c0a06-c161-48a2-adc5-07c7c4e0202f/resourcegroups/fhirdevtest/providers/microsoft.devtestlab/labs/fhirdevtest/artifactsources/public repo'.",
+            "type": "microsoft.devtestlab/labs/artifactsources",
+            "name": "[concat(parameters('labs_fhirdevtest_name'), '/', parameters('artifactsources_public_repo_name'))]",
+            "apiVersion": "2016-05-15",
+            "scale": null,
+            "properties": {
+                "displayName": "[concat(parameters('artifactsources_public_repo_name'),'Public Repo', parameters('artifactsources_public_repo_name'))]",
+                "uri": "https://github.com/Azure/azure-devtestlab.git",
+                "sourceType": "GitHub",
+                "folderPath": "/Artifacts",
+                "branchRef": "master",
+                "status": "Enabled",
+                "provisioningState": "Succeeded",
+                "uniqueIdentifier": "00000000-0000-0000-0000-000000000000"
+            },
+            "dependsOn": [
+                "[resourceId('microsoft.devtestlab/labs', parameters('labs_fhirdevtest_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/474c0a06-c161-48a2-adc5-07c7c4e0202f/resourcegroups/fhirdevtest/providers/microsoft.devtestlab/labs/fhirdevtest/schedules/labvmsshutdown'.",
+            "type": "microsoft.devtestlab/labs/schedules",
+            "name": "[concat(parameters('labs_fhirdevtest_name'), '/', parameters('schedules_labvmsshutdown_name'))]",
+            "apiVersion": "2016-05-15",
+            "location": "centralus",
+            "scale": null,
+            "properties": {
+                "status": "Enabled",
+                "taskType": "[concat(parameters('schedules_labvmsshutdown_name'),'LabVmsShutdownTask')]",
+                "dailyRecurrence": {
+                    "time": "1900"
+                },
+                "timeZoneId": "Central Standard Time",
+                "notificationSettings": {
+                    "status": "Disabled",
+                    "timeInMinutes": 30
+                },
+                "provisioningState": "Succeeded",
+                "uniqueIdentifier": "ae58fe22-a53d-4806-a167-11974beeea70"
+            },
+            "dependsOn": [
+                "[resourceId('microsoft.devtestlab/labs', parameters('labs_fhirdevtest_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/474c0a06-c161-48a2-adc5-07c7c4e0202f/resourcegroups/fhirdevtest/providers/microsoft.devtestlab/labs/fhirdevtest/schedules/labvmautostart'.",
+            "type": "microsoft.devtestlab/labs/schedules",
+            "name": "[concat(parameters('labs_fhirdevtest_name'), '/', parameters('schedules_labvmautostart_name'))]",
+            "apiVersion": "2016-05-15",
+            "location": "centralus",
+            "scale": null,
+            "properties": {
+                "status": "Enabled",
+                "taskType": "LabVmsStartupTask",
+                "weeklyRecurrence": {
+                    "weekdays": [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday"
+                    ],
+                    "time": "0700"
+                },
+                "timeZoneId": "Central Standard Time",
+                "notificationSettings": {
+                    "status": "Disabled",
+                    "timeInMinutes": 0
+                },
+                "provisioningState": "Succeeded",
+                "uniqueIdentifier": "a84bbad7-9e61-4b5f-953c-4353d4fc6d31"
+            },
+            "dependsOn": [
+                "[resourceId('microsoft.devtestlab/labs', parameters('labs_fhirdevtest_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/474c0a06-c161-48a2-adc5-07c7c4e0202f/resourcegroups/fhirdevtest/providers/microsoft.devtestlab/labs/fhirdevtest/users/18e877fd-521a-49ab-a3b3-cf80775243d6'.",
+            "type": "microsoft.devtestlab/labs/users",
+            "name": "[concat(parameters('labs_fhirdevtest_name'), '/', parameters('users_18e877fd_521a_49ab_a3b3_cf80775243d6_name'))]",
+            "apiVersion": "2016-05-15",
+            "scale": null,
+            "properties": {
+                "identity": {
+                    "principalName": "654068@cognizant.com",
+                    "principalId": "1003BFFDA480FA31",
+                    "tenantId": "de08c407-19b9-427d-9fe8-edf254300ca7",
+                    "objectId": "[parameters('users_18e877fd_521a_49ab_a3b3_cf80775243d6_name')]",
+                    "appId": "1a14be2a-e903-4cec-99cf-b2e209259a0f"
+                },
+                "secretStore": {
+                    "keyVaultUri": "https://fhirdevtest18e82008.vault.azure.net",
+                    "keyVaultId": "[resourceId('Microsoft.KeyVault/vaults', parameters('vaults_fhirdevtest18e82008_name'))]"
+                },
+                "provisioningState": "Succeeded",
+                "uniqueIdentifier": "bc3d1fe0-18fa-439c-9e8f-ff515aa29e78"
+            },
+            "dependsOn": [
+                "[resourceId('microsoft.devtestlab/labs', parameters('labs_fhirdevtest_name'))]",
+                "[resourceId('Microsoft.KeyVault/vaults', parameters('vaults_fhirdevtest18e82008_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/474c0a06-c161-48a2-adc5-07c7c4e0202f/resourcegroups/fhirdevtest/providers/microsoft.devtestlab/labs/fhirdevtest/virtualnetworks/dtlfhirdevtest'.",
+            "type": "microsoft.devtestlab/labs/virtualnetworks",
+            "name": "[concat(parameters('labs_fhirdevtest_name'), '/', parameters('virtualnetworks_dtlfhirdevtest_name_1'))]",
+            "apiVersion": "2016-05-15",
+            "scale": null,
+            "properties": {
+                "allowedSubnets": [
+                    {
+                        "resourceId": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_DtlfhirDevTest_name'), parameters('subnets_DtlfhirDevTestSubnet_name'))]",
+                        "labSubnetName": "[concat(parameters('virtualnetworks_dtlfhirdevtest_name_1'),'DtlfhirDevTestSubnet')]",
+                        "allowPublicIp": "Allow"
+                    }
+                ],
+                "externalProviderResourceId": "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_DtlfhirDevTest_name'))]",
+                "subnetOverrides": [
+                    {
+                        "resourceId": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_DtlfhirDevTest_name'), parameters('subnets_DtlfhirDevTestSubnet_name'))]",
+                        "labSubnetName": "[concat(parameters('virtualnetworks_dtlfhirdevtest_name_1'),'DtlfhirDevTestSubnet')]",
+                        "useInVmCreationPermission": "Allow",
+                        "usePublicIpAddressPermission": "Allow",
+                        "sharedPublicIpAddressConfiguration": {
+                            "allowedPorts": [
+                                {
+                                    "transportProtocol": "Tcp",
+                                    "backendPort": 3389
+                                },
+                                {
+                                    "transportProtocol": "Tcp",
+                                    "backendPort": 22
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "provisioningState": "Succeeded",
+                "uniqueIdentifier": "177aad12-f20b-4b45-8967-cbc9f4202dad"
+            },
+            "dependsOn": [
+                "[resourceId('microsoft.devtestlab/labs', parameters('labs_fhirdevtest_name'))]",
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_DtlfhirDevTest_name'), parameters('subnets_DtlfhirDevTestSubnet_name'))]",
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_DtlfhirDevTest_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/474c0a06-c161-48a2-adc5-07c7c4e0202f/resourcegroups/fhirdevtest/providers/microsoft.devtestlab/labs/fhirdevtest/users/18e877fd-521a-49ab-a3b3-cf80775243d6/secrets/password'.",
+            "type": "microsoft.devtestlab/labs/users/secrets",
+            "name": "[concat(parameters('labs_fhirdevtest_name'), '/', parameters('users_18e877fd_521a_49ab_a3b3_cf80775243d6_name'), '/', parameters('secrets_password_name_1'))]",
+            "apiVersion": "2016-05-15",
+            "scale": null,
+            "properties": {
+                "uniqueIdentifier": "[concat(resourceId('microsoft.devtestlab/labs/users', parameters('labs_fhirdevtest_name'), parameters('users_18e877fd_521a_49ab_a3b3_cf80775243d6_name')), concat('/secrets/', parameters('secrets_password_name_1')))]"
+            },
+            "dependsOn": [
+                "[resourceId('microsoft.devtestlab/labs', parameters('labs_fhirdevtest_name'))]",
+                "[resourceId('microsoft.devtestlab/labs/users', parameters('labs_fhirdevtest_name'), parameters('users_18e877fd_521a_49ab_a3b3_cf80775243d6_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/474c0a06-c161-48a2-adc5-07c7c4e0202f/resourceGroups/fhirdevtest/providers/Microsoft.KeyVault/vaults/fhirdevtest18e82008/secrets/password'.",
+            "type": "Microsoft.KeyVault/vaults/secrets",
+            "name": "[concat(parameters('vaults_fhirdevtest18e82008_name'), '/', parameters('secrets_password_name'))]",
+            "apiVersion": "2016-10-01",
+            "location": "centralus",
+            "scale": null,
+            "properties": {
+                "attributes": {
+                    "enabled": true
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.KeyVault/vaults', parameters('vaults_fhirdevtest18e82008_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/474c0a06-c161-48a2-adc5-07c7c4e0202f/resourceGroups/fhirdevtest/providers/Microsoft.KeyVault/vaults/fhirDevTest2162/secrets/a306a2ae-c0ad-4ee6-a553-efa961686b31'.",
+            "type": "Microsoft.KeyVault/vaults/secrets",
+            "name": "[concat(parameters('vaults_fhirDevTest2162_name'), '/', parameters('secrets_a306a2ae_c0ad_4ee6_a553_efa961686b31_name'))]",
+            "apiVersion": "2016-10-01",
+            "location": "centralus",
+            "tags": {
+                "Creator": "DevTest Labs"
+            },
+            "scale": null,
+            "properties": {
+                "attributes": {
+                    "enabled": true
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.KeyVault/vaults', parameters('vaults_fhirDevTest2162_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/474c0a06-c161-48a2-adc5-07c7c4e0202f/resourceGroups/fhirDevTest/providers/Microsoft.Network/virtualNetworks/DtlfhirDevTest/subnets/DtlfhirDevTestSubnet'.",
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "name": "[concat(parameters('virtualNetworks_DtlfhirDevTest_name'), '/', parameters('subnets_DtlfhirDevTestSubnet_name'))]",
+            "apiVersion": "2018-02-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "addressPrefix": "10.0.0.0/20"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_DtlfhirDevTest_name'))]"
+            ]
+        }
+    ]
+}
